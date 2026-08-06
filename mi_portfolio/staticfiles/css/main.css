@@ -8,9 +8,7 @@
     background: black; 
 }
 
-section {
-    background: black;
-}
+
 
 
 
@@ -65,7 +63,12 @@ section {
     width: 40%;
     margin-top: 5%;
     margin-bottom: 5%;
-    background-color: #321a5d !important;
+    background-color: rgba(50, 26, 93, 0.7) !important;
+    padding: 3%;
     text-align: center;
     color: #ffffff;
+}
+.card.projects{
+    width: 100%;
+    
 }
