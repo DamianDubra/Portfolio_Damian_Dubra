@@ -40,7 +40,7 @@ class Particle{
     draw(){
 
         ctx.beginPath();
-        ctx.fillStyle='rgba(0,0,0,0.2)';
+        ctx.fillStyle="#61dafb";
         ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
         ctx.fill();
         
