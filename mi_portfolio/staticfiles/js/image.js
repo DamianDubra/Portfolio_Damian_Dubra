@@ -4,17 +4,17 @@ document.addEventListener("DOMContentLoaded", function () {
         targets: ".intro-image",
         opacity: [0, 1],
         scale: [0.5, 1],
-        duration: 1000,
-        easing: "easeOutElastic(1, .6)"
+        duration: 3000,
+        easing: "easeOutElastic(1, .8)"
     });
 
     anime({
         targets: ".intro-text",
         opacity: [0, 1],
         scale: [0.5, 1],
-        duration: 1000,
+        duration: 3000,
         delay: 300,
-        easing: "easeOutElastic(1, .6)"
+        easing: "easeOutElastic(1, .8)"
     });
 
 

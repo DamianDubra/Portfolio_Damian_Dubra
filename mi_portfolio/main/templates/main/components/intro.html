@@ -1,7 +1,8 @@
 {% load static %}
+{% load cache_bust %}
 <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
 
-<script src="{% static 'js/image.js' %}"></script>
+<script src="{% static_versioned 'js/image.js' %}"></script>
 
 <div class="container-intro">
 

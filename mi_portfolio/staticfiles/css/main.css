@@ -136,5 +136,13 @@
 .container-about{
     width: 100%;
     
+}
+.card.about{
+    width: 94%;
+    
+}
+.card.education{
+    width: 94%;
+    justify-self: right;
     
 }
