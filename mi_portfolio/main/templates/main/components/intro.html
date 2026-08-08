@@ -1,11 +1,43 @@
 {% load static %}
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+
+<script src="{% static 'js/image.js' %}"></script>
+
 <div class="container-intro">
 
     <div class="d-flex align-items-center justify-content-between">
-        <div>
-            <img class="rounded-circle" src="{% static 'images/Damian.jpg' %}">
+
+        <div class="intro-image">
+
+            <div class="flip-container">
+
+                <div class="flip">
+
+                
+                    <div class="flip-front">
+                        <img 
+                            class="rounded-circle"
+                            src="{% static 'images/Damian.jpg' %}"
+                            alt="Damian"
+                        >
+                    </div>
+
+                    
+                    <div class="flip-back">
+                        <h2>¡Hola!</h2>
+                        <p>
+                            Soy Damian, estudiante de Ingeniería en Sistemas
+                            y desarrollador junior.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
-        <div class="w-60 d-flex flex-column justify-content-left">
+
+        <div class="w-60 d-flex flex-column justify-content-left intro-text">
             <div style="padding: 3%;">
                 <h2>Introduction</h2>
                 <h3>sadddsadaadsdsaadsadsdasdasdas</h3>
@@ -14,11 +46,15 @@
                 <h3>sadd</h3>
                 <h3>sadd</h3>
                 <h3>sadd</h3>
+
                 <div>
-                    <button type="button" class="btn btn-outline-light btn-lg justify-content-center">Contact</button>
+                    <button type="button" class="btn btn-outline-light btn-lg">
+                        Contact
+                    </button>
                 </div>
             </div>
-
         </div>
+
     </div>
+
 </div>
