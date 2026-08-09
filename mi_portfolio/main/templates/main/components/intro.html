@@ -18,14 +18,14 @@
                     <div class="flip-front">
                         <img 
                             class="rounded-circle"
-                            src="{% static 'images/Damian.jpg' %}"
+                            src="{{maindata.profile_picture.url}}"
                             alt="Damian"
                         >
                     </div>
 
                     
                     <div class="flip-back">
-                        <h2>¡Hola!</h2>
+                        <h2>{{maindata}}</h2>
                         <p>
                             Soy Damian, estudiante de Ingeniería en Sistemas
                             y desarrollador junior.

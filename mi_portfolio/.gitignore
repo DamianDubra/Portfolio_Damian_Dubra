@@ -1,0 +1,6 @@
+db.sqlite3
+*.pyc
+.venv/
+_pycache_/
+migrations/
+media/about_images/
