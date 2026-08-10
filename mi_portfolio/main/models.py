@@ -1,7 +1,5 @@
 from django.db import models
 
-# Create your models here.
-
 class MainData(models.Model):
     name= models.CharField("Nombre del autor de porftolio",max_length=50, default="Damian")
     last_name=models.CharField("Apellido autor de porftolio",max_length=50, default="Dubra")
@@ -35,7 +33,7 @@ class Experience(models.Model):
 class Project(models.Model):
     name=models.CharField("nombre del proyecto", max_length=50)
     description=models.TextField("descripcion de proyecto")
-    image=models.ImageField("imagen del proyecto",upload_to="about_images/")
+    image=models.ImageField("imagen del proyecto",upload_to="about_images/",null=True, blank=True)
     github=models.URLField("enlace github")
     web=models.URLField("web activa", null=True, blank=True)
 

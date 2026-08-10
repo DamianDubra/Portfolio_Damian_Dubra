@@ -1,63 +1,42 @@
 {% load static %}
 <section id="projects">
+    {% for project in projects %}
     <div class="container d-flex flex justify-content-between">
-        <div class="card projects d-flex">
-            <div class="container row">
-                <div class="col-md-4 text-center">
-                    <img class="rounded-circle" src="{% static 'images/Damian.jpg' %}">
+        <div class="card projects">
+            <div class="container flex">
+                <div class="text-center">
+                    {% if project.image %}
+                        <img class="project-image" src="{{ project.image.url }}" alt="{{ project.name }}">
+                    {% endif %}
                 </div>
-                <div class="col-md-8">
-                    <h2>Introduction</h2>
-                    <h3>sadddsadaadsdsaadsadsdasdasdas</h3>
-                    <h3>sadd</h3>
-                    <h3>sadd</h3>
-                    <h3>sadd</h3>
-                    <h3>sadd</h3>
-                    <h3>sadd</h3>
-                    <button class="btn-lg " href="">repositorio</button>
-                    <button class="btn-lg " href="">web</button>
+                <div>
+                    <h2>{{ project.name }}</h2>
+                    <p>{{ project.description }}</p>
+
+                    <div class="tech-icons flex">
+                        {% for skill in project.skills.all %}
+                            {% if skill.logo %}
+                            <div class="flex">
+                                <img class="logo-tech" src="{{ skill.logo.url }}" alt="{{ skill.name }}" title="{{ skill.name }}">
+                                <span class="badge">{{ skill.name }}</span>
+                            </div>
+                            {% else %}
+                                <span class="badge">{{ skill.name }}</span>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+
+                    {% if project.github %}
+                        <a class="btn-lg" href="{{ project.github }}" target="_blank">Repositorio</a>
+                    {% endif %}
+                    {% if project.web %}
+                        <a class="btn-lg" href="{{ project.web }}" target="_blank">Web</a>
+                    {% endif %}
                 </div>
             </div>
         </div>
     </div>
-    <div class="container d-flex flex justify-content-between">
-        <div class="card projects d-flex">
-            <div class="container row">
-                <div class="col-md-4 text-center">
-                    <img class="rounded-circle" src="{% static 'images/Damian.jpg' %}">
-                </div>
-                <div class="col-md-8">
-                    <h2>Introduction</h2>
-                    <h3>sadddsadaadsdsaadsadsdasdasdas</h3>
-                    <h3>sadd</h3>
-                    <h3>sadd</h3>
-                    <h3>sadd</h3>
-                    <h3>sadd</h3>
-                    <h3>sadd</h3>
-                    <button class="btn-lg " href="">repositorio</button>
-                    <button class="btn-lg " href="">web</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container d-flex flex justify-content-between">
-        <div class="card projects d-flex">
-            <div class="container row">
-                <div class="col-md-4 text-center">
-                    <img class="rounded-circle" src="{% static 'images/Damian.jpg' %}">
-                </div>
-                <div class="col-md-8">
-                    <h2>Introduction</h2>
-                    <h3>sadddsadaadsdsaadsadsdasdasdas</h3>
-                    <h3>sadd</h3>
-                    <h3>sadd</h3>
-                    <h3>sadd</h3>
-                    <h3>sadd</h3>
-                    <h3>sadd</h3>
-                    <button class="btn-lg " href="">repositorio</button>
-                    <button class="btn-lg " href="">web</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    {% empty %}
+    <p>Todavía no hay proyectos cargados.</p>
+    {% endfor %}
 </section>

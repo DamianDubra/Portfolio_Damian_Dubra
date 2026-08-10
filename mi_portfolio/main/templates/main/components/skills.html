@@ -1,25 +1,38 @@
 <section id="about">
     <div class="container d-flex flex justify-content-between">
-        <div class="card">
+        <div class="card soft-skills">
             <h1>Soft-skills</h1>
-            <button class="button w-40 ">python</button>
-
-            <button class="button lg">python</button>
-            <button class="button lg">python</button>
-            <button class="button lg">python</button>
-            <button class="button lg">python</button>
-            
+            <div class="tech-icons">
+                {% for skill in skills %}
+                    {% if not skill.hard %}
+                        {% if skill.logo %}
+                        <div class="flex">
+                            <img class="logo-tech" src="{{ skill.logo.url }}" alt="{{ skill.name }}" title="{{ skill.name }}">
+                            <span class="badge">{{ skill.name }}</span>
+                        </div>
+                        {% else %}
+                        <span class="badge">{{ skill.name }}</span>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </div>
         </div>
         <div class="card">
-            <h1>Hard-skills</h1>    
-            <button class="button lg">python</button>
-            <button class="button lg">python</button>
-            <button class="button lg">python</button>
-            <button class="button lg">python</button>
-            <button class="button lg">python</button>
-            <button class="button lg">python</button>
-            <button class="button lg">python</button>
-
+            <h1>Hard-skills</h1>
+            <div class="tech-icons">
+                {% for skill in skills %}
+                    {% if skill.hard %}
+                        {% if skill.logo %}
+                        <div class="flex">
+                            <img class="logo-tech" src="{{ skill.logo.url }}" alt="{{ skill.name }}" title="{{ skill.name }}">
+                            <span class="badge">{{ skill.name }}</span>
+                        </div>
+                        {% else %}
+                        <span class="badge">{{ skill.name }}</span>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </div>
         </div>
     </div>
 </section>

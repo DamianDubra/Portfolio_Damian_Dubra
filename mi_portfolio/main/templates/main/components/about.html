@@ -1,63 +1,82 @@
 <section id="about">
-    <div class="container d-flex flex justify-content-between">
+    <div class="container justify-content-between">
         <div class="container-about">
+            <div class="card" style="width: 100%;">
             <h1>Experiencies</h1>
-            <div class="card about">
-                <h2>Trabajo 1</h2>
-                <p>Descripción de mi primera experiencia...</p>
             </div>
+            
+            {% for experience in experiences %}
             <div class="card about">
-                <h2>Trabajo 1</h2>
-                <p>Descripción de mi primera experiencia...</p>
+                <div class="justify-content-center">
+                    {% if experience.company_photo %}
+                        <img class="job_image" src="{{ experience.company_photo.url }}" alt="{{ experience.company }}">
+                    {% endif %}
+                </div>
+                <div>
+                    <h2>{{ experience.title }}</h2>
+                    <h3>{{ experience.company }}</h3>
+                    
+                    <p>{{ experience.description }}</p>
+                    <p>
+                        {{ experience.startdate|date:"M Y" }} -
+                        {% if experience.enddate %}
+                            {{ experience.enddate|date:"M Y" }}
+                        {% else %}
+                            Actualidad
+                        {% endif %}
+                    </p>
+                    <h4>Skills aplied</h4>
+                    <div class="tech-icons flex">
+                            {% for skill in experience.skills.all %}
+                                {% if skill.logo %}
+                                <div class="flex">
+                                    <img class="logo-tech" src="{{ skill.logo.url }}" alt="{{ skill.name }}" title="{{ skill.name }}">
+                                    <span class="badge">{{ skill.name }}</span>
+                                </div>
+                                {% else %}
+                                <div class="flex">
+                                    <span class="badge">{{ skill.name }}</span>
+                                </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                </div>
             </div>
-            <div class="card about">
-                <h2>Trabajo 1</h2>
-                <p>Descripción de mi primera experiencia...</p>
+            {% empty %}
+            <p>Todavía no hay experiencias cargadas.</p>
+            {% endfor %}
+            
+        </div>
+        <div class="container-about">
+            <div class="card" style="width: 100%;">
+            <h1>Education</h1>
             </div>
-            <div class="card about">
-                <h2>Trabajo 1</h2>
-                <p>Descripción de mi primera experiencia...</p>
+            {% for education in educations %}
+            <div class="card education">
+                <h2>{{education.name}}</h2>
+                <h1>{{education.institucion}}</h1>
+                <p>{{education.description}}</p>
+                <p>
+                    {{ education.startdate|date:"M Y" }} -
+                    {% if education.enddate %}
+                        {{ education.enddate|date:"M Y" }}
+                    {% else %}
+                        Actualidad
+                    {% endif %}
+                </p>
+                {% if education.certificade %}
+                <button src="{{ education.certificade }}" alt="{{ education.institucion }}">Ver certificado</button>
+                {% endif %}
             </div>
-            <div class="card about">
-                <h2>Trabajo 1</h2>
-                <p>Descripción de mi primera experiencia...</p>
-            </div>
+
+            
+            
+            {% empty %}
+            
+            <p>Todavía no hay estudios cargados.</p>
+            {% endfor %}
+      
 
         
-        </div>
-        <div class="container-about">
-            <h1>Education</h1>
-            <div class="card education">
-                fdsfdsf
-            </div>
-            <div class="card education">
-                fdsfdsf
-            </div>
-            <div class="card education">
-                fdsfdsf
-            </div>
-            <div class="card education">
-                fdsfdsf
-            </div>
-            <div class="card education">
-                fdsfdsf
-            </div>
-            <div class="card education">
-                fdsfdsf
-            </div>
-            <div class="card education">
-                fdsfdsf
-            </div>
-            <div class="card education">
-                fdsfdsf
-            </div>
-            <div class="card education">
-                fdsfdsf
-            </div>
-            <div class="card education">
-                fdsfdsf
-            </div>
-
-        </div>
     </div>
 </section>

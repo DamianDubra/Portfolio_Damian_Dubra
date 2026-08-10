@@ -135,14 +135,53 @@
 }
 .container-about{
     width: 100%;
-    
+
 }
-.card.about{
-    width: 94%;
-    
+.card.about {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+
 }
 .card.education{
-    width: 94%;
-    justify-self: right;
+    width: 100%;
     
+}
+
+.job_image{
+    width: 80%;
+    height: 80%;
+    justify-content: center;
+}
+
+.project-image{
+    width: 100%;
+    
+}
+.tech-icons {
+    display: flex;
+    flex-wrap: wrap;       
+    justify-content: center; 
+    align-items: center;
+    gap: 1rem;             
+}
+
+.tech-icons .flex {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    text-align: center;
+}
+
+.logo-tech {
+    width: 40px;      
+    height: 40px;
+    object-fit: contain;
+}
+.card.soft-skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
