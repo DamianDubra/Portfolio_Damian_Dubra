@@ -1,4 +1,7 @@
 <section id="about">
+    <div class="titles">
+        <h1>Skills</h1>
+    </div>
     <div class="container d-flex flex justify-content-between">
         <div class="card soft-skills">
             <h1>Soft-skills</h1>
@@ -6,12 +9,14 @@
                 {% for skill in skills %}
                     {% if not skill.hard %}
                         {% if skill.logo %}
-                        <div class="flex">
+                        <div class="minicard">
                             <img class="logo-tech" src="{{ skill.logo.url }}" alt="{{ skill.name }}" title="{{ skill.name }}">
                             <span class="badge">{{ skill.name }}</span>
                         </div>
                         {% else %}
-                        <span class="badge">{{ skill.name }}</span>
+                        <div class="minicard">
+                            <span class="badge">{{ skill.name }}</span>
+                        </div>
                         {% endif %}
                     {% endif %}
                 {% endfor %}
@@ -23,12 +28,14 @@
                 {% for skill in skills %}
                     {% if skill.hard %}
                         {% if skill.logo %}
-                        <div class="flex">
+                        <div class="minicard">
                             <img class="logo-tech" src="{{ skill.logo.url }}" alt="{{ skill.name }}" title="{{ skill.name }}">
                             <span class="badge">{{ skill.name }}</span>
                         </div>
                         {% else %}
-                        <span class="badge">{{ skill.name }}</span>
+                        <div class="minicard">
+                            <span class="badge">{{ skill.name }}</span>
+                        </div>
                         {% endif %}
                     {% endif %}
                 {% endfor %}

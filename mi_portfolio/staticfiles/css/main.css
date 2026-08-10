@@ -8,14 +8,15 @@
     background: black; 
 }
 
-
-
+.nav-link:hover{
+    transform: scale(1.1);
+}
 
 
 .navbar-custom {
     background: #321a5d; 
     box-shadow: 0 4px 15px rgba(108, 43, 217, 0.25);
-    border-bottom: 1px solid rgba(156, 81, 255, 0.2);
+    border: 1px solid rgba(156, 81, 255, 0.2);
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -35,7 +36,8 @@
 .nav-link {
     box-shadow: 0 4px 15px rgba(108, 43, 217, 0.25);
     border: 1px solid rgba(156, 81, 255, 0.2);
-    border-radius: 25%;
+    border-radius: 10%;
+    transition: all 0.3s ease;
 }
 .nav-item{
     padding: 5px;
@@ -184,4 +186,45 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.minicard{
+    background: #321a5d;
+    border-radius: 10%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.minicard:hover{
+    transform: scale(1.1);
+}
+.btn-lg {
+    background: #321a5d;
+    color: white;
+    margin-top: 20px !important;
+    display: inline-block;
+}
+.titles{
+    justify-content: center;
+    color:#ffffff;
+    width: 100%;
+    display:flex;
+}
+.final{
+    background:#321a5d; 
+    border-top:1px solid rgba(156, 81, 255, 0.2); 
+    width:100%; 
+    color:white;
+    display: flex; 
+    justify-content: center;
+    padding:3%;
+    gap: 15%;
+}
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

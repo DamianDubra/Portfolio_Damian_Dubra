@@ -1,5 +1,8 @@
 {% load static %}
 <section id="projects">
+    <div class="titles">
+        <h1>Projects</h1>
+    </div>
     {% for project in projects %}
     <div class="container d-flex flex justify-content-between">
         <div class="card projects">
@@ -16,12 +19,14 @@
                     <div class="tech-icons flex">
                         {% for skill in project.skills.all %}
                             {% if skill.logo %}
-                            <div class="flex">
+                            <div class="minicard">
                                 <img class="logo-tech" src="{{ skill.logo.url }}" alt="{{ skill.name }}" title="{{ skill.name }}">
                                 <span class="badge">{{ skill.name }}</span>
                             </div>
                             {% else %}
+                            <div class="minicard">
                                 <span class="badge">{{ skill.name }}</span>
+                            </div>
                             {% endif %}
                         {% endfor %}
                     </div>

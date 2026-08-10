@@ -26,9 +26,28 @@ document.addEventListener("DOMContentLoaded", function () {
         threshold: 0.2
     });
 
-
     cards.forEach(function (card) {
+
         observer.observe(card);
+
+        card.addEventListener("mouseenter", function () {
+            anime({
+                targets: card,
+                scale: 1.05,
+                duration: 200,
+                easing: "easeOutQuad"
+            });
+        });
+
+        card.addEventListener("mouseleave", function () {
+            anime({
+                targets: card,
+                scale: 1,
+                duration: 200,
+                easing: "easeOutQuad"
+            });
+        });
+
     });
 
 });

@@ -1,8 +1,8 @@
 <section id="about">
     <div class="container justify-content-between">
         <div class="container-about">
-            <div class="card" style="width: 100%;">
-            <h1>Experiencies</h1>
+            <div class="titles">
+                <h1>Experiencies</h1>
             </div>
             
             {% for experience in experiences %}
@@ -29,12 +29,12 @@
                     <div class="tech-icons flex">
                             {% for skill in experience.skills.all %}
                                 {% if skill.logo %}
-                                <div class="flex">
+                                <div class="minicard">
                                     <img class="logo-tech" src="{{ skill.logo.url }}" alt="{{ skill.name }}" title="{{ skill.name }}">
                                     <span class="badge">{{ skill.name }}</span>
                                 </div>
                                 {% else %}
-                                <div class="flex">
+                                <div class="minicard">
                                     <span class="badge">{{ skill.name }}</span>
                                 </div>
                                 {% endif %}
@@ -48,7 +48,7 @@
             
         </div>
         <div class="container-about">
-            <div class="card" style="width: 100%;">
+            <div class="titles">
             <h1>Education</h1>
             </div>
             {% for education in educations %}
