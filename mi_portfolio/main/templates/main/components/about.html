@@ -22,10 +22,10 @@
                         {% if experience.enddate %}
                             {{ experience.enddate|date:"M Y" }}
                         {% else %}
-                            Actualidad
+                            Present
                         {% endif %}
                     </p>
-                    <h4>Skills aplied</h4>
+                    <h4>Applied Skills</h4>
                     <div class="tech-icons flex">
                             {% for skill in experience.skills.all %}
                                 {% if skill.logo %}
@@ -61,7 +61,7 @@
                     {% if education.enddate %}
                         {{ education.enddate|date:"M Y" }}
                     {% else %}
-                        Actualidad
+                        Present
                     {% endif %}
                 </p>
                 {% if education.certificade %}
