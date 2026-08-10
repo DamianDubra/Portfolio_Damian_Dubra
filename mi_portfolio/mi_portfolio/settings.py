@@ -71,6 +71,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "mi_portfolio.wsgi.application"
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://localhost:8000",
+    "http://localhost:8000",
+    "https://*.app.github.dev",  # cubre cualquier Codespace
+]
 
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
@@ -126,3 +131,4 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+

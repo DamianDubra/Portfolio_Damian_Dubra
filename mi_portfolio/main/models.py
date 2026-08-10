@@ -81,3 +81,12 @@ class Post(models.Model):
     class Meta:
         verbose_name= "Post"
         verbose_name_plural= "Posts"
+
+class ContactMessage(models.Model):
+    email= models.EmailField("email de quien consulta",max_length=254)
+    message= models.TextField("Consulta")
+
+    class Meta:
+        verbose_name="Email"
+        verbose_name_plural="Emails"
+

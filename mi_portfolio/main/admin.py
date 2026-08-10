@@ -1,6 +1,6 @@
 from django.contrib import admin
 from import_export.admin import ImportExportModelAdmin
-from .models import MainData,Experience,Skill,Education,Project,Post
+from .models import MainData,Experience,Skill,Education,Project,Post, ContactMessage
 
 @admin.register(MainData)
 class MainDataAdmin(ImportExportModelAdmin):
@@ -26,3 +26,8 @@ class EducationAdmin(ImportExportModelAdmin):
 @admin.register(Post)
 class PostAdmin(ImportExportModelAdmin):
     list_display=('title', 'description', 'linkedin', 'image')
+
+
+@admin.register(ContactMessage)
+class ContactMessageAdmin(ImportExportModelAdmin):
+    list_display=('email', 'message')
