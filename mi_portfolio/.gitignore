@@ -3,4 +3,3 @@ db.sqlite3
 .venv/
 _pycache_/
 migrations/
-media/about_images/
