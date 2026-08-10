@@ -14,7 +14,7 @@
                 </div>
                 <div>
                     <h2>{{ experience.title }}</h2>
-                    <h3>{{ experience.company }}</h3>
+                    <h3 data-no-translate>{{ experience.company }}</h3>
                     
                     <p>{{ experience.description }}</p>
                     <p>
@@ -31,11 +31,11 @@
                                 {% if skill.logo %}
                                 <div class="minicard">
                                     <img class="logo-tech" src="{{ skill.logo.url }}" alt="{{ skill.name }}" title="{{ skill.name }}">
-                                    <span class="badge">{{ skill.name }}</span>
+                                    <span class="badge" data-no-translate>{{ skill.name }}</span>
                                 </div>
                                 {% else %}
                                 <div class="minicard">
-                                    <span class="badge">{{ skill.name }}</span>
+                                    <span class="badge" data-no-translate>{{ skill.name }}</span>
                                 </div>
                                 {% endif %}
                             {% endfor %}
@@ -54,7 +54,7 @@
             {% for education in educations %}
             <div class="card education">
                 <h2>{{education.name}}</h2>
-                <h1>{{education.institucion}}</h1>
+                <h1 data-no-translate>{{education.institucion}}</h1>
                 <p>{{education.description}}</p>
                 <p>
                     {{ education.startdate|date:"M Y" }} -
