@@ -65,7 +65,14 @@
                     {% endif %}
                 </p>
                 {% if education.certificade %}
-                <button src="{{ education.certificade }}" alt="{{ education.institucion }}">Ver certificado</button>
+                <div>
+                    <a class="btn-lg"
+                    href="{{ education.certificade.url }}"
+                    target="_blank"
+                    style="width: 17%; justify-content: center;">
+                        Ver certificado
+                    </a>
+                </div>
                 {% endif %}
             </div>
 
