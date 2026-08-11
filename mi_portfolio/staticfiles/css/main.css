@@ -290,7 +290,7 @@ html[data-theme="light"] {
     
     .card,.final, .container,.container-about,.container-intro, .intro-container,.w-60 {
         flex-direction: column;
-        width:00%;
+        width:100%;
     }
     .container-contact {
         width: 100%;
