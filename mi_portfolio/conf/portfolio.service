@@ -1,0 +1,13 @@
+[Unit]
+Description=gunicorn daemon for Portfolio_Damian_Dubra
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/aplicaciones/Portfolio_Damian_Dubra/mi_portfolio
+ExecStart=/home/ubuntu/django_env/bin/gunicorn -c /home/ubuntu/aplicaciones/Portfolio_Damian_Dubra/mi_portfolio/conf/gunicorn_config.py mi_portfolio.wsgi:application
+UMask=0002
+
+[Install]
+WantedBy=multi-user.target

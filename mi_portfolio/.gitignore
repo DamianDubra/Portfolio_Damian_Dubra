@@ -1,5 +1,7 @@
 db.sqlite3
 *.pyc
+__pycache__/
 .venv/
-_pycache_/
+venv/
 migrations/
+static/

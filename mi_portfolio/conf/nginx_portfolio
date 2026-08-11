@@ -1,0 +1,24 @@
+server {
+    listen 80;
+    server_name 54.210.206.193;
+    # cuando tengas dominio: server_name damiandubra.com.ar www.damiandubra.com.ar;
+
+    # Maneja archivos estaticos
+    location /static/ {
+        alias /home/ubuntu/aplicaciones/Portfolio_Damian_Dubra/mi_portfolio/static/;
+    }
+
+    # Maneja archivos multimedia
+    location /media/ {
+        alias /home/ubuntu/aplicaciones/Portfolio_Damian_Dubra/mi_portfolio/media/;
+    }
+
+    # Proxy para Gunicorn
+    location / {
+        proxy_pass http://127.0.0.1:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}

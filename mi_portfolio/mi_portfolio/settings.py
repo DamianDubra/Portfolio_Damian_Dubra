@@ -25,7 +25,12 @@ SECRET_KEY = "django-insecure-)u&1#!-b*banh&nal9&x(+oe(8!w0dfd1-ovl_@a^pfk)7&nl^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "54.210.206.193",  # IP publica del servidor
+    # "damiandubra.com.ar",  # descomentar cuando el dominio apunte al servidor
+]
 
 
 # Application definition
@@ -44,6 +49,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -75,6 +81,8 @@ CSRF_TRUSTED_ORIGINS = [
     "https://localhost:8000",
     "http://localhost:8000",
     "https://*.app.github.dev",  # cubre cualquier Codespace
+    "http://54.210.206.193",  # IP publica del servidor
+    # "https://damiandubra.com.ar",  # descomentar cuando el dominio apunte al servidor
 ]
 
 # Database
@@ -122,13 +130,22 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = "staticfiles/"
+STATIC_URL = '/static/'
+if DEBUG == True:
+    STATIC_ROOT = os.path.join(BASE_DIR, "static")
+else:
+    STATIC_ROOT = '/home/ubuntu/aplicaciones/Portfolio_Damian_Dubra/mi_portfolio/static/'
+
+
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'staticfiles')
+    os.path.join(BASE_DIR, "staticfiles"),
 ]
 
 MEDIA_URL = '/media/'
-
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+if DEBUG == True:
+    MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+else:
+    MEDIA_ROOT = '/home/ubuntu/aplicaciones/Portfolio_Damian_Dubra/mi_portfolio/media/'
 
