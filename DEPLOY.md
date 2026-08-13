@@ -97,9 +97,33 @@ sudo systemctl restart portfolio
 sudo systemctl restart nginx
 ```
 
-## Cuando tengas dominio
+## Dominio: damiandubra.com.ar
 
-1. Apuntar el DNS (registro A) a `54.210.206.193`.
-2. Descomentar el dominio en `ALLOWED_HOSTS` y `CSRF_TRUSTED_ORIGINS` en `settings.py`.
-3. Poner el dominio en `server_name` en `/etc/nginx/sites-available/portfolio`.
-4. HTTPS: `sudo apt install certbot python3-certbot-nginx -y && sudo certbot --nginx`
+El dominio ya esta configurado en `settings.py` (`ALLOWED_HOSTS` y
+`CSRF_TRUSTED_ORIGINS`) y en `conf/nginx_portfolio` (`server_name`).
+
+Falta el DNS, en el panel de tu registrador (NIC Argentina o donde lo tengas):
+
+| Tipo | Nombre | Valor            |
+|------|--------|------------------|
+| A    | `@`    | `54.210.206.193` |
+| A    | `www`  | `54.210.206.193` |
+
+La propagacion tarda entre minutos y unas horas. Verificar con:
+
+```bash
+dig +short damiandubra.com.ar
+```
+
+Tiene que devolver `54.210.206.193`. Recien cuando eso responda bien, sacar el
+certificado HTTPS:
+
+```bash
+sudo apt install certbot python3-certbot-nginx -y
+sudo certbot --nginx -d damiandubra.com.ar -d www.damiandubra.com.ar
+```
+
+Certbot edita el archivo de nginx solo (agrega el bloque 443 y el redirect de
+80 a 443) y deja la renovacion automatica programada.
+
+Abrir el puerto 443 en el Security Group de AWS ademas del 80.

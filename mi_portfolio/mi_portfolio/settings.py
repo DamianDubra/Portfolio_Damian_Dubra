@@ -29,7 +29,8 @@ ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     "54.210.206.193",  # IP publica del servidor
-    # "damiandubra.com.ar",  # descomentar cuando el dominio apunte al servidor
+    "damiandubra.com.ar",
+    "www.damiandubra.com.ar",
 ]
 
 
@@ -82,7 +83,10 @@ CSRF_TRUSTED_ORIGINS = [
     "http://localhost:8000",
     "https://*.app.github.dev",  # cubre cualquier Codespace
     "http://54.210.206.193",  # IP publica del servidor
-    # "https://damiandubra.com.ar",  # descomentar cuando el dominio apunte al servidor
+    "https://damiandubra.com.ar",
+    "https://www.damiandubra.com.ar",
+    "http://damiandubra.com.ar",
+    "http://www.damiandubra.com.ar",
 ]
 
 # Database

@@ -1,7 +1,6 @@
 server {
     listen 80;
-    server_name 54.210.206.193;
-    # cuando tengas dominio: server_name damiandubra.com.ar www.damiandubra.com.ar;
+    server_name damiandubra.com.ar www.damiandubra.com.ar 54.210.206.193;
 
     # Maneja archivos estaticos
     location /static/ {
